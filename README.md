@@ -1,3 +1,8 @@
+# Wonderland treasury analytics
+![image](https://user-images.githubusercontent.com/22024059/147579192-07ce3d48-713c-4694-897e-50f8d8e251a4.png)
+
+Work in progress.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
