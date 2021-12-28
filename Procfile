@@ -1,2 +1,2 @@
 react-scripts build
-web: start-heroku
+web: npm run start-heroku
