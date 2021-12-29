@@ -9,6 +9,7 @@ query {
       treasuryMIMFromWETHMIMJLP
       treasuryMIMFromTIMEMIMJLP
       treasuryWETHValueFromWETHMIMJLP
+      treasuryWAVAXValueFromWAVAXTIMEJLP
     }
   }
 `;

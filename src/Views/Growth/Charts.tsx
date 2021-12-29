@@ -12,6 +12,7 @@ const SOURCES_2: (keyof GrowthDataPoint)[] = [
   "treasuryWAVAXMarketValue",
   "treasuryWETHMarketValue",
   "treasuryWETHValueFromWETHMIMJLP",
+  "treasuryWAVAXValueFromWAVAXTIMEJLP",
 ];
 
 export const Charts = () => {
