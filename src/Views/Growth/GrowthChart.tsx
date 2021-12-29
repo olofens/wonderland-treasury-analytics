@@ -48,6 +48,8 @@ export const GrowthChart = ({ sources, data, title }: GrowthChartProps) => {
   const initValue = useRef(calculateTotal(data.length - 1));
   const valueRef = useRef<HTMLSpanElement>(null);
 
+  console.log(valueRef);
+
   const handleMouseMove = useCallback(
     (moveData: any) => {
       if (!valueRef.current) return;
