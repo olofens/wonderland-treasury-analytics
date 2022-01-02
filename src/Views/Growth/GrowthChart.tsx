@@ -7,6 +7,7 @@ import {
   YAxis,
   Tooltip,
 } from "recharts";
+import { CustomToolTip } from "../../components";
 import { ChartCard } from "./ChartCard";
 import { formatCash, getCoinColors } from "./helpers";
 import { GrowthDataPoint } from "./types";
@@ -103,7 +104,9 @@ export const GrowthChart = ({ sources, data, title }: GrowthChartProps) => {
             tickLine={false}
             fontSize="13px"
           />
-          <Tooltip />
+          {/* <Tooltip /> */}
+
+          <Tooltip content={<CustomToolTip />} />
           {sources.map((key) => {
             return (
               <Area

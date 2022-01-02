@@ -1,5 +1,5 @@
 import React, { ReactNode, RefObject } from "react";
-import { FontWeight, Text } from "../../components/Text/Text";
+import { FontWeight, Text } from "../../components";
 import { ChartCardContainer, TextWrapper } from "./styles";
 
 export const ChartCard = ({

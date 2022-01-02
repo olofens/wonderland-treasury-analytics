@@ -21,7 +21,7 @@ export const Wrapper = styled.div`
 
 export const ChartCardContainer = styled.div`
   height: 500px;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(175, 196, 208, 0.4);
   -webkit-backdrop-filter: blur(100px);
   backdrop-filter: blur(100px);
   padding: 24px;
