@@ -21,3 +21,16 @@ export interface RawDataPoint {
   treasuryWETHValueFromWETHMIMJLP: number;
   treasuryWAVAXValueFromWAVAXTIMEJLP: number;
 }
+
+export interface USTDegenboxDataPoint {
+  id: string;
+  timestamp: Date;
+  collateral: number;
+  debt: number;
+}
+
+export interface USTDegenboxProfitDataPoint {
+  id: string;
+  timestamp: Date;
+  profit: number;
+}

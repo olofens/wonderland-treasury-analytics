@@ -13,3 +13,14 @@ query {
     }
   }
 `;
+
+export const ustDegenboxQuery = `
+query {
+  ustdegenboxMetrics(first: 1000 orderBy: timestamp, orderDirection: desc) {
+    id
+    timestamp
+    collateral
+    debt
+  }
+}
+`;
