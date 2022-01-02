@@ -37,6 +37,7 @@ export const getCoinColors = (
     case "treasuryMIMFromTIMEMIMJLP":
     case "treasuryMIMMarketValue":
     case "treasuryMIMFromWETHMIMJLP":
+    case "treasuryMIMFromWMEMOMIMSLP":
       return [MIM_COLOR_2, MIM_COLOR_1];
     case "treasuryWAVAXMarketValue":
     case "treasuryWAVAXValueFromWAVAXTIMEJLP":

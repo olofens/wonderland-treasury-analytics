@@ -1,10 +1,11 @@
 import React, { CSSProperties, forwardRef, ReactNode } from "react";
 
 export enum FontWeight {
-  Default = "Montserrat",
-  Medium = "Montserrat Medium",
-  Semibold = "Montserrat Semibold",
-  Bold = "Montserrat Bold",
+  Light = 300,
+  Default = 400,
+  Medium = 500,
+  Bold = 600,
+  Heavy = 700,
 }
 
 export interface TextProps {
@@ -28,8 +29,8 @@ export const Text = forwardRef<HTMLSpanElement, TextProps>(
   ) => {
     const textStyle: CSSProperties = {
       fontSize: size,
-      fontFamily: weight,
-      color: dimmed ? "rgba(255, 255, 255, 0.6)" : "#000000",
+      fontWeight: weight,
+      color: dimmed ? "rgba(255, 255, 255, 0.6)" : "#fff",
       ...style,
     };
     return (

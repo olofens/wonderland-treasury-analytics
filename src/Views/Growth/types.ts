@@ -8,6 +8,7 @@ export interface GrowthDataPoint {
   treasuryWETHMarketValue: number;
   treasuryWETHValueFromWETHMIMJLP: number;
   treasuryWAVAXValueFromWAVAXTIMEJLP: number;
+  treasuryMIMFromWMEMOMIMSLP: number;
 }
 
 export interface RawDataPoint {
@@ -20,6 +21,7 @@ export interface RawDataPoint {
   treasuryWETHMarketValue: number;
   treasuryWETHValueFromWETHMIMJLP: number;
   treasuryWAVAXValueFromWAVAXTIMEJLP: number;
+  treasuryMIMFromWMEMOMIMSLP: number;
 }
 
 export interface USTDegenboxDataPoint {

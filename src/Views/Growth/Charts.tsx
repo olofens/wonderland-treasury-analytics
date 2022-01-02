@@ -5,6 +5,7 @@ import { GrowthChart } from "./GrowthChart";
 import { GrowthDataPoint, USTDegenboxDataPoint } from "./types";
 import { ChartsContainer, FlexMember, Wrapper } from "./styles";
 import { USTDegenboxChart } from "./USTDegenboxChart";
+import { TopHatSpinner } from "../../components";
 
 const SOURCES_1: (keyof GrowthDataPoint)[] = ["treasuryMIMMarketValue"];
 const SOURCES_2: (keyof GrowthDataPoint)[] = [
@@ -15,6 +16,7 @@ const SOURCES_2: (keyof GrowthDataPoint)[] = [
   "treasuryWETHMarketValue",
   "treasuryWETHValueFromWETHMIMJLP",
   "treasuryWAVAXValueFromWAVAXTIMEJLP",
+  "treasuryMIMFromWMEMOMIMSLP",
 ];
 const SOURCES_3: (keyof USTDegenboxDataPoint)[] = [
   "id",
@@ -27,9 +29,14 @@ export const Charts = () => {
   const data = useGrowthData();
   const data2 = useUSTDegenboxData();
 
+  const loaded = data && data2;
+
+  if (!loaded) {
+    return <TopHatSpinner />;
+  }
+
   return (
     <Wrapper>
-      <h3>Growth</h3>
       {data && (
         <ChartsContainer>
           <FlexMember>
