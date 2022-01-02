@@ -44,4 +44,9 @@ export const TREASURY_TOOLKIT: { [key in keyof GrowthMetric]: any } = {
     name: "WAVAX in WAVAX/TIME JLP",
     coins: ["wETH"],
   },
+  treasuryMIMFromWMEMOMIMSLP: {
+    shortName: "MIM in WMEMO/MIM SLP",
+    name: "MIM in WMEMO/MIM SLP",
+    coins: ["MIM"],
+  },
 };

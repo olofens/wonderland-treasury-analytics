@@ -1,5 +1,5 @@
 import React, { ReactNode, RefObject } from "react";
-import { FontWeight, Text } from "../../components";
+import { Text } from "../../components";
 import { ChartCardContainer, TextWrapper } from "./styles";
 
 export const ChartCard = ({
@@ -16,10 +16,10 @@ export const ChartCard = ({
   return (
     <ChartCardContainer>
       <TextWrapper>
-        <Text weight={FontWeight.Medium} dimmed size="20px">
+        <Text weight={500} dimmed size="20px">
           {title}
         </Text>
-        <Text ref={valueRef} weight={FontWeight.Bold} size="24px">
+        <Text ref={valueRef} weight={700} size="30px">
           {initValue}
         </Text>
       </TextWrapper>
