@@ -36,3 +36,19 @@ export interface USTDegenboxProfitDataPoint {
   timestamp: Date;
   profit: number;
 }
+
+//https://thegraph.com/hosted-service/subgraph/olofens/wonderland-eth-subgraph?query=Token%20balances%20query
+export interface ETHBalances {
+  id: string;
+  timestamp: Date;
+  MIMCount: number;
+  MIMValue: number;
+  CVXCount: number;
+  CVXValue: number;
+  WBTCCount: number;
+  WBTCValue: number;
+  CRVCount: number;
+  CRVValue: number;
+  ETHCount: number;
+  ETHValue: number;
+}

@@ -1,16 +1,19 @@
 import { MetricsContext } from "../contexts/MetricsContext";
 import { useUSTDegenboxData } from "../hooks/useUSTDegenboxData";
 import { ReactNode } from "react";
-import { useGrowthData } from "../hooks/useGrowthData";
+import { useAvalancheTreasuryMetrics } from "../hooks/useAvalancheMetrics";
+import { useEthereumWalletBalances } from "../hooks/useEthereumWalletBalances";
 export const MetricsProvider = ({ children }: { children: ReactNode }) => {
-  const growthData = useGrowthData();
+  const avalancheData = useAvalancheTreasuryMetrics();
   const ustDegenboxData = useUSTDegenboxData();
-  const isLoaded = growthData != null && ustDegenboxData != null;
+  const ethereumWalletBalances = useEthereumWalletBalances();
+  const isLoaded = avalancheData != null && ustDegenboxData != null;
 
   const value = {
     isLoaded,
-    growthData: growthData ?? [],
+    avalancheData: avalancheData ?? [],
     ustDegenboxData: ustDegenboxData ?? [],
+    ethereumWalletBalances: ethereumWalletBalances ?? [],
   };
 
   return (

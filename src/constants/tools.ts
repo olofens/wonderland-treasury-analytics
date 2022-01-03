@@ -9,7 +9,7 @@ export const MIM_COLOR_2 = "#9A84C8";
 
 export type GrowthMetric = Omit<GrowthDataPoint, "id" | "timestamp">;
 
-export const TREASURY_TOOLKIT: { [key in keyof GrowthMetric]: any } = {
+export const TREASURY_TOOLKIT = {
   treasuryMIMFromTIMEMIMJLP: {
     shortName: "MIM in TIME/MIM JLP",
     name: "MIM in TIME/MIM JLP",
@@ -48,6 +48,11 @@ export const TREASURY_TOOLKIT: { [key in keyof GrowthMetric]: any } = {
   treasuryMIMFromWMEMOMIMSLP: {
     shortName: "MIM in WMEMO/MIM SLP",
     name: "MIM in WMEMO/MIM SLP",
+    coins: ["MIM"],
+  },
+  MIMCount: {
+    shortName: "MIM in wallet",
+    name: "MIM in wallet",
     coins: ["MIM"],
   },
 };

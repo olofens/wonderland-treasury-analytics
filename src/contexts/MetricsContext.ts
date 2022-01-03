@@ -1,10 +1,12 @@
+import { ETHBalances } from "./../types/data";
 import { createContext, useContext } from "react";
 import { GrowthDataPoint, USTDegenboxDataPoint } from "../types/data";
 
 export const MetricsContext = createContext<MetricsContextProps>({
   isLoaded: false,
-  growthData: [],
+  avalancheData: [],
   ustDegenboxData: [],
+  ethereumWalletBalances: [],
 });
 
 export const useMetrics = () => {
@@ -13,6 +15,7 @@ export const useMetrics = () => {
 
 type MetricsContextProps = {
   isLoaded: boolean;
-  growthData: GrowthDataPoint[];
+  avalancheData: GrowthDataPoint[];
   ustDegenboxData: USTDegenboxDataPoint[];
+  ethereumWalletBalances: ETHBalances[];
 };

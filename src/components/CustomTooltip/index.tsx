@@ -28,7 +28,7 @@ export const CustomToolTip = ({ active, payload: rechartData, label }: any) => {
 
   return (
     <TooltipContainer>
-      {rechartData.map((dataPoint: any) => {
+      {rechartData.map((dataPoint: any, i: number) => {
         const shortName =
           TREASURY_TOOLKIT[dataPoint.name as keyof GrowthMetric].shortName;
         const formattedUSDvalue = dataPoint.value.toLocaleString("en-US", {
@@ -36,7 +36,7 @@ export const CustomToolTip = ({ active, payload: rechartData, label }: any) => {
           currency: "USD",
           maximumFractionDigits: 0,
         });
-        return <p>{`${shortName} : ${formattedUSDvalue}`}</p>;
+        return <p key={i}>{`${shortName} : ${formattedUSDvalue}`}</p>;
       })}
       <p>{`${formattedDate}`}</p>
     </TooltipContainer>

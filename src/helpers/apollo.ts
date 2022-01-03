@@ -1,15 +1,14 @@
 import { ApolloClient, InMemoryCache, gql } from "@apollo/client";
-import { GROWTHMETRICS_URL } from "../constants/graph";
 
-const client = () =>
+const client = (subgraphUrl: string) =>
   new ApolloClient({
-    uri: GROWTHMETRICS_URL,
+    uri: subgraphUrl,
     cache: new InMemoryCache(),
   });
 
-const apollo = async <T>(queryString: string) => {
+const apollo = async <T>(subgraphUrl: string, queryString: string) => {
   try {
-    const data = client().query<T>({
+    const data = client(subgraphUrl).query<T>({
       query: gql(queryString),
     });
     return data;

@@ -25,3 +25,22 @@ query {
   }
 }
 `;
+
+export const ETHBalancesQuery = `
+query {
+  tokenBalancesMetrics(first: 1000, orderBy: timestamp, orderDirection: desc) {
+    id
+    timestamp
+    MIMCount
+    MIMValue
+    CVXCount
+    CVXValue
+    WBTCCount
+    WBTCValue
+    CRVCount
+    CRVValue
+    ETHCount
+    ETHValue
+  }
+}
+`;

@@ -13,8 +13,8 @@ import { formatCash, getCoinColors } from "../../helpers/utils";
 import { GrowthDataPoint } from "../../types/data";
 
 export interface GrowthChartProps {
-  sources: (keyof GrowthDataPoint)[]; // just get the datapoints
-  data: GrowthDataPoint[];
+  sources: string[]; // just get the datapoints
+  data: any[];
   title: string;
 }
 
@@ -82,7 +82,7 @@ export const GrowthChart = ({ sources, data, title }: GrowthChartProps) => {
             {sources.map((key) => {
               const [color1, color2] = getCoinColors(key);
               return (
-                <linearGradient id={key} x1="0" y1="0" x2="0" y2="1">
+                <linearGradient id={key} key={key} x1="0" y1="0" x2="0" y2="1">
                   <stop offset="5%" stopColor={color1} />
                   <stop offset="80%" stopColor={color2} />
                 </linearGradient>
@@ -111,6 +111,7 @@ export const GrowthChart = ({ sources, data, title }: GrowthChartProps) => {
             return (
               <Area
                 type="monotone"
+                key={key}
                 dataKey={key}
                 stackId="1"
                 stroke="#000"

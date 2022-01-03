@@ -21,6 +21,19 @@ export function mapDataPoint(raw: RawDataPoint): GrowthDataPoint {
   };
 }
 
+export function removeZeroFields(datapoint: any) {
+  Object.keys(datapoint).forEach((key) => {
+    if (key === "id" || key === "timestamp") return;
+    if (datapoint[key] === 0) delete datapoint[key];
+  });
+
+  return {
+    ...datapoint,
+    id: datapoint.id.toString(),
+    timestamp: new Date(datapoint.timestamp * 1000), // unix ts is in seconds, not ms
+  };
+}
+
 export const formatCash = (n: number) => {
   if (n < 1e3) return n + "";
   if (n >= 1e3 && n < 1e6) return +(n / 1e3).toFixed(1) + "K";
@@ -30,14 +43,13 @@ export const formatCash = (n: number) => {
   else return n + "";
 };
 
-export const getCoinColors = (
-  key: keyof Omit<GrowthDataPoint, "id | timestamp">
-): string[] => {
+export const getCoinColors = (key: string): string[] => {
   switch (key) {
     case "treasuryMIMFromTIMEMIMJLP":
     case "treasuryMIMMarketValue":
     case "treasuryMIMFromWETHMIMJLP":
     case "treasuryMIMFromWMEMOMIMSLP":
+    case "MIMCount":
       return [MIM_COLOR_2, MIM_COLOR_1];
     case "treasuryWAVAXMarketValue":
     case "treasuryWAVAXValueFromWAVAXTIMEJLP":

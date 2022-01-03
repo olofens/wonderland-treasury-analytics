@@ -1,14 +1,12 @@
 import React from "react";
-import { useGrowthData } from "../../hooks/useGrowthData";
 import { GrowthChart } from "./GrowthChart";
 import { GrowthDataPoint, USTDegenboxDataPoint } from "../../types/data";
 import { ChartsContainer, FlexMember, Wrapper } from "./styles";
 import { USTDegenboxChart } from "./USTDegenboxChart";
-import { TopHatSpinner } from "../../components";
-import { useUSTDegenboxData } from "../../hooks/useUSTDegenboxData";
 import { useMetrics } from "../../contexts";
+import { useTotalMIMBalance } from "../../hooks/useTotalMIMBalance";
 
-const SOURCES_1: (keyof GrowthDataPoint)[] = ["treasuryMIMMarketValue"];
+const SOURCES_1: string[] = ["MIMCount"];
 const SOURCES_2: (keyof GrowthDataPoint)[] = [
   "treasuryMIMMarketValue",
   "treasuryMIMFromTIMEMIMJLP",
@@ -27,21 +25,22 @@ const SOURCES_3: (keyof USTDegenboxDataPoint)[] = [
 ];
 
 export const Charts = () => {
-  const { growthData, ustDegenboxData } = useMetrics();
+  const { avalancheData, ustDegenboxData } = useMetrics();
+  const totalMIMData = useTotalMIMBalance();
 
   return (
     <Wrapper>
       <ChartsContainer>
         <FlexMember>
           <GrowthChart
-            data={growthData}
+            data={totalMIMData}
             sources={SOURCES_1}
             title="Treasury Risk-Free Value"
           />
         </FlexMember>
         <FlexMember>
           <GrowthChart
-            data={growthData}
+            data={avalancheData}
             sources={SOURCES_2}
             title="Total treasury assets"
           />
