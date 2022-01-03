@@ -9,8 +9,8 @@ import {
 } from "recharts";
 import { CustomToolTip } from "../../components";
 import { ChartCard } from "./ChartCard";
-import { formatCash, getCoinColors } from "./helpers";
-import { GrowthDataPoint } from "./types";
+import { formatCash, getCoinColors } from "../../helpers/utils";
+import { GrowthDataPoint } from "../../types/data";
 
 export interface GrowthChartProps {
   sources: (keyof GrowthDataPoint)[]; // just get the datapoints

@@ -1,11 +1,12 @@
 import React from "react";
-import { useGrowthData } from "./useGrowthData";
-import { useUSTDegenboxData } from "./useUSTDegenboxData";
+import { useGrowthData } from "../../hooks/useGrowthData";
 import { GrowthChart } from "./GrowthChart";
-import { GrowthDataPoint, USTDegenboxDataPoint } from "./types";
+import { GrowthDataPoint, USTDegenboxDataPoint } from "../../types/data";
 import { ChartsContainer, FlexMember, Wrapper } from "./styles";
 import { USTDegenboxChart } from "./USTDegenboxChart";
 import { TopHatSpinner } from "../../components";
+import { useUSTDegenboxData } from "../../hooks/useUSTDegenboxData";
+import { useMetrics } from "../../contexts";
 
 const SOURCES_1: (keyof GrowthDataPoint)[] = ["treasuryMIMMarketValue"];
 const SOURCES_2: (keyof GrowthDataPoint)[] = [
@@ -26,46 +27,36 @@ const SOURCES_3: (keyof USTDegenboxDataPoint)[] = [
 ];
 
 export const Charts = () => {
-  const data = useGrowthData();
-  const data2 = useUSTDegenboxData();
-
-  const loaded = data && data2;
-
-  if (!loaded) {
-    return <TopHatSpinner />;
-  }
+  const { growthData, ustDegenboxData } = useMetrics();
 
   return (
     <Wrapper>
-      {data && (
-        <ChartsContainer>
-          <FlexMember>
-            <GrowthChart
-              data={data}
-              sources={SOURCES_1}
-              title="Treasury Risk-Free Value"
-            />
-          </FlexMember>
-          <FlexMember>
-            <GrowthChart
-              data={data}
-              sources={SOURCES_2}
-              title="Total treasury assets"
-            />
-          </FlexMember>
-        </ChartsContainer>
-      )}
-      {data2 && (
-        <ChartsContainer>
-          <FlexMember>
-            <USTDegenboxChart
-              data={data2}
-              sources={SOURCES_3}
-              title="Profit from USTDegenbox"
-            />
-          </FlexMember>
-        </ChartsContainer>
-      )}
+      <ChartsContainer>
+        <FlexMember>
+          <GrowthChart
+            data={growthData}
+            sources={SOURCES_1}
+            title="Treasury Risk-Free Value"
+          />
+        </FlexMember>
+        <FlexMember>
+          <GrowthChart
+            data={growthData}
+            sources={SOURCES_2}
+            title="Total treasury assets"
+          />
+        </FlexMember>
+      </ChartsContainer>
+
+      <ChartsContainer>
+        <FlexMember>
+          <USTDegenboxChart
+            data={ustDegenboxData}
+            sources={SOURCES_3}
+            title="Profit from USTDegenbox"
+          />
+        </FlexMember>
+      </ChartsContainer>
     </Wrapper>
   );
 };

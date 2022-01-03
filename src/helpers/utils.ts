@@ -5,8 +5,8 @@ import {
   WETH_COLOR_2,
   AVAX_COLOR_1,
   AVAX_COLOR_2,
-} from "./constants";
-import { RawDataPoint, GrowthDataPoint } from "./types";
+} from "../constants/tools";
+import { RawDataPoint, GrowthDataPoint } from "../types/data";
 export function mapDataPoint(raw: RawDataPoint): GrowthDataPoint {
   Object.keys(raw).forEach((key) => {
     if (key === "id" || key === "timestamp") return;

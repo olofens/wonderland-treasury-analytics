@@ -1,5 +1,5 @@
 import React from "react";
-import { formatCash } from "./helpers";
+import { formatCash } from "../../helpers/utils";
 import {
   Bar,
   BarChart,
@@ -9,7 +9,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { USTDegenboxDataPoint } from "./types";
+import { USTDegenboxDataPoint } from "../../types/data";
 import { ChartCard } from "./ChartCard";
 
 export interface USTDegenboxChartProps {
