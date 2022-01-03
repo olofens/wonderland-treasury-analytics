@@ -1,9 +1,9 @@
-import { GrowthDataPoint } from "./types";
+import { GrowthDataPoint } from "../types/data";
 import { useMemo } from "react";
 import { useQuery } from "react-query";
-import { treasuryQuery } from "./TreasuryQueries";
-import { mapDataPoint } from "./helpers";
-import apollo from "../../helpers/apollo";
+import { treasuryQuery } from "../constants/TreasuryQueries";
+import { mapDataPoint } from "../helpers/utils";
+import apollo from "../helpers/apollo";
 
 const useTreasuryMetrics = (options: any) => {
   return useQuery(

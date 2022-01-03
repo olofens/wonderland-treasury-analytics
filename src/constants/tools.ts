@@ -1,4 +1,5 @@
-import { GrowthDataPoint } from "./types";
+import { GrowthDataPoint } from "../types/data";
+
 export const WETH_COLOR_1 = "#020256";
 export const WETH_COLOR_2 = "#9393F6";
 export const AVAX_COLOR_1 = "#671A1A";

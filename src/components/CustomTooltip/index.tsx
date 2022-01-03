@@ -1,5 +1,5 @@
 import React from "react";
-import { GrowthMetric, TREASURY_TOOLKIT } from "../../Views/Growth/constants";
+import { GrowthMetric, TREASURY_TOOLKIT } from "../../constants/tools";
 import { TooltipContainer } from "./styles";
 
 const days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];

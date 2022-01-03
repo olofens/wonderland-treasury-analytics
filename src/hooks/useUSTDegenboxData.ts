@@ -1,10 +1,9 @@
-import { USTDegenboxDataPoint, USTDegenboxProfitDataPoint } from "./types";
 import { useMemo } from "react";
 import { useQuery } from "react-query";
-import { ustDegenboxQuery } from "./TreasuryQueries";
-import { mapDataPoint } from "./helpers";
-import { apolloExt } from "../../helpers/apollo";
-import { ETH_SUBGRAPH_URL } from "../../constants/graph";
+import { ETH_SUBGRAPH_URL } from "../constants/graph";
+import { ustDegenboxQuery } from "../constants/TreasuryQueries";
+import { apolloExt } from "../helpers/apollo";
+import { USTDegenboxDataPoint } from "../types/data";
 
 const useUSTDegenboxMetrics = (options: any) => {
   return useQuery(
