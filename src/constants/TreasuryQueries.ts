@@ -44,3 +44,17 @@ query {
   }
 }
 `;
+
+export const SSPELLQuery = `
+query {
+    stakedSpellMetrics(first: 1000, orderBy: timestamp, orderDirection: desc) {
+      id
+      timestamp
+      SPELLPrice
+      SPELLSSPELLRatio
+      SSPELLPrice
+      SSPELLCount
+      SSPELLValue
+    }
+}
+`;

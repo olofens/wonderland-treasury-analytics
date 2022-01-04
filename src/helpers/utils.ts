@@ -49,13 +49,17 @@ export const getCoinColors = (key: string): string[] => {
     case "treasuryMIMMarketValue":
     case "treasuryMIMFromWETHMIMJLP":
     case "treasuryMIMFromWMEMOMIMSLP":
+    case "MIMInLP":
     case "MIMCount":
       return [MIM_COLOR_2, MIM_COLOR_1];
     case "treasuryWAVAXMarketValue":
+    case "AVAXValue":
+    case "AVAXInLP":
     case "treasuryWAVAXValueFromWAVAXTIMEJLP":
       return [AVAX_COLOR_2, AVAX_COLOR_1];
     case "treasuryWETHMarketValue":
     case "treasuryWETHValueFromWETHMIMJLP":
+    case "ETHInLP":
       return [WETH_COLOR_2, WETH_COLOR_1];
     default:
       return ["#fff", "#fff"];

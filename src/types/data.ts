@@ -52,3 +52,13 @@ export interface ETHBalances {
   ETHCount: number;
   ETHValue: number;
 }
+
+export interface SSPELLDataPoint {
+  id: string;
+  timestamp: Date;
+  SPELLPrice: number;
+  SPELLSSPELLRatio: number;
+  SSPELLPrice: number;
+  SSPELLCount: number;
+  SSPELLValue: number;
+}

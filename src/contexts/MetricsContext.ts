@@ -1,4 +1,4 @@
-import { ETHBalances } from "./../types/data";
+import { ETHBalances, SSPELLDataPoint } from "./../types/data";
 import { createContext, useContext } from "react";
 import { GrowthDataPoint, USTDegenboxDataPoint } from "../types/data";
 
@@ -7,6 +7,7 @@ export const MetricsContext = createContext<MetricsContextProps>({
   avalancheData: [],
   ustDegenboxData: [],
   ethereumWalletBalances: [],
+  sSPELLData: [],
 });
 
 export const useMetrics = () => {
@@ -18,4 +19,5 @@ type MetricsContextProps = {
   avalancheData: GrowthDataPoint[];
   ustDegenboxData: USTDegenboxDataPoint[];
   ethereumWalletBalances: ETHBalances[];
+  sSPELLData: SSPELLDataPoint[];
 };

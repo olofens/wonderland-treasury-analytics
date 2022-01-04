@@ -55,4 +55,44 @@ export const TREASURY_TOOLKIT = {
     name: "MIM in wallet",
     coins: ["MIM"],
   },
+  AVAXValue: {
+    shortName: "AVAX USD Value",
+    name: "AVAX USD Value",
+    coins: ["AVAX"],
+  },
+  ETHValue: {
+    shortName: "ETH USD Value",
+    name: "ETH USD Value",
+    coins: ["ETH"],
+  },
+  AVAXInLP: {
+    shortName: "AVAX In AMM LP",
+    name: "AVAX In AMM LP",
+    coins: ["AVAX"],
+  },
+  MIMInLP: {
+    shortName: "MIM in LP",
+    name: "MIM in LP",
+    coins: ["MIM"],
+  },
+  ETHInLP: {
+    shortName: "ETH in LP",
+    name: "ETH in LP",
+    coins: ["ETH"],
+  },
+  CRVValue: {
+    shortName: "CRV in wallet",
+    name: "CRV in wallet",
+    coins: ["CRV"],
+  },
+  CVXValue: {
+    shortName: "CVX in wallet",
+    name: "CVX in wallet",
+    coins: ["CVX"],
+  },
+  SSPELLValue: {
+    shortName: "Staked SPELL Wallet Balance",
+    name: "Staked SPELL Wallet Balance",
+    coins: ["SSPELL"],
+  },
 };

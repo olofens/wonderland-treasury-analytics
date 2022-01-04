@@ -7,11 +7,13 @@ export const ChartsContainer = styled.div`
   align-content: center;
   justify-content: center;
   gap: 24px;
+  flex-wrap: wrap;
 `;
 
 export const FlexMember = styled.div`
-  flex: 1;
-  max-width: 600px;
+  flex-grow: 1;
+  flex-basis: 40%;
+  max-width: 550px;
 `;
 
 export const Wrapper = styled.div`
