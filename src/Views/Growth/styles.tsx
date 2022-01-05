@@ -13,7 +13,6 @@ export const ChartsContainer = styled.div`
 export const FlexMember = styled.div`
   flex-grow: 1;
   flex-basis: 40%;
-  max-width: 550px;
 `;
 
 export const Wrapper = styled.div`

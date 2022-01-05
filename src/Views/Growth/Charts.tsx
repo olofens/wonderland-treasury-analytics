@@ -10,6 +10,7 @@ import { useTotalETHBalance } from "../../hooks/useTotalETHBalance";
 import { useAVAXInLP } from "../../hooks/useAVAXInLP";
 import { useTotalMIMInLP } from "../../hooks/useTotalMIMInLP";
 import { useTotalETHInLP } from "../../hooks/useTotalETHInLP";
+import { PopsicleV3Visualizer } from "./Popsicle/PopsicleV3Visualizer";
 
 const SOURCES_1: string[] = ["MIMCount"];
 const SOURCES_2: (keyof GrowthDataPoint)[] = [
@@ -30,8 +31,13 @@ const SOURCES_3: (keyof USTDegenboxDataPoint)[] = [
 ];
 
 export const Charts = () => {
-  const { avalancheData, ustDegenboxData, ethereumWalletBalances, sSPELLData } =
-    useMetrics();
+  const {
+    avalancheData,
+    ustDegenboxData,
+    ethereumWalletBalances,
+    sSPELLData,
+    popsicleWBTCWETHData,
+  } = useMetrics();
   const totalMIMData = useTotalMIMBalance();
   const totalAVAXData = useTotalAVAXBalance();
   const totalETHData = useTotalETHBalance();
@@ -98,7 +104,17 @@ export const Charts = () => {
             title="Staked SPELL Wallet Balance"
           />
         </FlexMember>
+        <FlexMember>
+          <GrowthChart
+            data={popsicleWBTCWETHData}
+            sources={["WETHValue", "WBTCValue"]}
+            title="Popsicle Univ3 WBTC-WETH Position"
+          />
+        </FlexMember>
       </ChartsContainer>
+
+      {/* <div style={{ paddingBottom: "24px" }}></div>
+      <PopsicleV3Visualizer /> */}
 
       <ChartsContainer>
         <FlexMember>

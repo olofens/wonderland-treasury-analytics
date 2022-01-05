@@ -40,3 +40,21 @@ export const Text = forwardRef<HTMLSpanElement, TextProps>(
     );
   }
 );
+
+export const DimmedTitleText = ({ children }: { children: ReactNode }) => {
+  return (
+    <Text dimmed size="20px" weight={FontWeight.Medium}>
+      {children}
+    </Text>
+  );
+};
+
+export const BrightValueText = forwardRef<HTMLSpanElement, TextProps>(
+  ({ children }, ref) => {
+    return (
+      <Text ref={ref} size="30px" weight={FontWeight.Heavy}>
+        {children}
+      </Text>
+    );
+  }
+);

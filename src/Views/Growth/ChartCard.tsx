@@ -1,5 +1,5 @@
 import React, { ReactNode, RefObject } from "react";
-import { Text } from "../../components";
+import { BrightValueText, DimmedTitleText, Text } from "../../components";
 import { ChartCardContainer, TextWrapper } from "./styles";
 
 export const ChartCard = ({
@@ -16,12 +16,8 @@ export const ChartCard = ({
   return (
     <ChartCardContainer>
       <TextWrapper>
-        <Text weight={500} dimmed size="20px">
-          {title}
-        </Text>
-        <Text ref={valueRef} weight={700} size="30px">
-          {initValue}
-        </Text>
+        <DimmedTitleText>{title}</DimmedTitleText>
+        <BrightValueText ref={valueRef}>{initValue}</BrightValueText>
       </TextWrapper>
 
       {children}

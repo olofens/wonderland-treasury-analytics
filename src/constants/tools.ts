@@ -6,6 +6,8 @@ export const AVAX_COLOR_1 = "#671A1A";
 export const AVAX_COLOR_2 = "#C80203";
 export const MIM_COLOR_1 = "#6C6CFB";
 export const MIM_COLOR_2 = "#9A84C8";
+export const WBTC_COLOR_1 = "#f7931a";
+export const WBTC_COLOR_2 = "#f7931a";
 
 export type GrowthMetric = Omit<GrowthDataPoint, "id" | "timestamp">;
 
@@ -94,5 +96,15 @@ export const TREASURY_TOOLKIT = {
     shortName: "Staked SPELL Wallet Balance",
     name: "Staked SPELL Wallet Balance",
     coins: ["SSPELL"],
+  },
+  WETHValue: {
+    shortName: "WETH Value",
+    name: "WETH Value",
+    coins: ["ETH"],
+  },
+  WBTCValue: {
+    shortName: "WBTC Value",
+    name: "WBTC Value",
+    coins: ["BTC"],
   },
 };

@@ -10,4 +10,5 @@ export const TooltipContainer = styled.div`
   border: 1px solid black;
   border-radius: 10px;
   text-align: left;
+  color: #000;
 `;

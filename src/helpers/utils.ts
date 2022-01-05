@@ -1,3 +1,4 @@
+import { WBTC_COLOR_1 } from "./../constants/tools";
 import {
   MIM_COLOR_1,
   MIM_COLOR_2,
@@ -5,6 +6,7 @@ import {
   WETH_COLOR_2,
   AVAX_COLOR_1,
   AVAX_COLOR_2,
+  WBTC_COLOR_2,
 } from "../constants/tools";
 import { RawDataPoint, GrowthDataPoint } from "../types/data";
 export function mapDataPoint(raw: RawDataPoint): GrowthDataPoint {
@@ -34,6 +36,30 @@ export function removeZeroFields(datapoint: any) {
   };
 }
 
+/**
+ * Converts some data class to a percentage representation of it,
+ * while also conserving id and timestamp properties.
+ * The return type will be the exact same data structure but the keys passed in
+ * will have their values be converted from their absolute value to their relative value
+ */
+export const toPercentageValues = (datapoint: any, keysToConvert: string[]) => {
+  const numbers: number[] = keysToConvert.map((key) => datapoint[key]);
+  const total = numbers.reduce((prev, next) => prev + next, 0);
+  const relativeNumbers = numbers.map((n) => n / total);
+  const newObject = { ...datapoint };
+  keysToConvert.forEach((key, i) => {
+    newObject[key] = relativeNumbers[i];
+  });
+
+  return newObject;
+};
+
+export const formatNumber = (n: number): string => {
+  return (
+    "$" + Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(n)
+  );
+};
+
 export const formatCash = (n: number) => {
   if (n < 1e3) return n + "";
   if (n >= 1e3 && n < 1e6) return +(n / 1e3).toFixed(1) + "K";
@@ -60,7 +86,11 @@ export const getCoinColors = (key: string): string[] => {
     case "treasuryWETHMarketValue":
     case "treasuryWETHValueFromWETHMIMJLP":
     case "ETHInLP":
+    case "ETHValue":
+    case "WETHValue":
       return [WETH_COLOR_2, WETH_COLOR_1];
+    case "WBTCValue":
+      return [WBTC_COLOR_2, WBTC_COLOR_1];
     default:
       return ["#fff", "#fff"];
   }

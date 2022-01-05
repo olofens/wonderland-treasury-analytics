@@ -1,33 +1,15 @@
 import React, { useCallback, useRef } from "react";
-import {
-  Area,
-  AreaChart,
-  ResponsiveContainer,
-  XAxis,
-  YAxis,
-  Tooltip,
-} from "recharts";
+import { Area, AreaChart, ResponsiveContainer, Tooltip } from "recharts";
 import { CustomToolTip } from "../../components";
 import { ChartCard } from "./ChartCard";
-import { formatCash, getCoinColors } from "../../helpers/utils";
-import { GrowthDataPoint } from "../../types/data";
+import { getCoinColors } from "../../helpers/utils";
+import { CashYAxis, DateXAxis } from "../../components/Chart";
 
 export interface GrowthChartProps {
   sources: string[]; // just get the datapoints
   data: any[];
   title: string;
 }
-
-const yAxisTickFormatter = (value: number) => {
-  return `$${formatCash(value)}`;
-};
-
-const xAxisTickFormatter = (date: Date): string => {
-  return date.toLocaleDateString("en-US", {
-    month: "short",
-    day: "numeric",
-  });
-};
 
 export const GrowthChart = ({ sources, data, title }: GrowthChartProps) => {
   const calculateTotal = useCallback(
@@ -89,22 +71,8 @@ export const GrowthChart = ({ sources, data, title }: GrowthChartProps) => {
               );
             })}
           </defs>
-          <XAxis
-            dataKey="timestamp"
-            tickFormatter={xAxisTickFormatter}
-            minTickGap={25}
-            fontSize="13px"
-            padding={{ right: 20 }}
-            axisLine={false}
-            tickLine={false}
-          />
-          <YAxis
-            tickFormatter={yAxisTickFormatter}
-            axisLine={false}
-            tickLine={false}
-            fontSize="13px"
-          />
-          {/* <Tooltip /> */}
+          {DateXAxis()}
+          {CashYAxis()}
 
           <Tooltip content={<CustomToolTip />} />
           {sources.map((key) => {

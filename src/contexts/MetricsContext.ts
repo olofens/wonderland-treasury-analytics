@@ -1,3 +1,4 @@
+import { PopsicleWBTCWETHDataPoint } from "./../hooks/usePopsicleWBTCWETHMetric";
 import { ETHBalances, SSPELLDataPoint } from "./../types/data";
 import { createContext, useContext } from "react";
 import { GrowthDataPoint, USTDegenboxDataPoint } from "../types/data";
@@ -8,6 +9,7 @@ export const MetricsContext = createContext<MetricsContextProps>({
   ustDegenboxData: [],
   ethereumWalletBalances: [],
   sSPELLData: [],
+  popsicleWBTCWETHData: [],
 });
 
 export const useMetrics = () => {
@@ -20,4 +22,5 @@ type MetricsContextProps = {
   ustDegenboxData: USTDegenboxDataPoint[];
   ethereumWalletBalances: ETHBalances[];
   sSPELLData: SSPELLDataPoint[];
+  popsicleWBTCWETHData: PopsicleWBTCWETHDataPoint[];
 };
